@@ -181,6 +181,7 @@ h1 {
 
 .button-group {
     margin-top: 2rem;
+    margin-bottom: 2rem;
     display: flex;
     gap: 1rem;
     justify-content: center;
