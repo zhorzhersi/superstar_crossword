@@ -377,7 +377,7 @@ const crosswordWords = [
         word: "FA",
         clue: "do,re, mi..sol",
         startRow: 7,
-        startCol:5,
+        startCol: 5,
         orientation: "vertical"
     },
     {
@@ -385,7 +385,7 @@ const crosswordWords = [
         word: "EU",
         clue: "Evropska unija",
         startRow: 6,
-        startCol:0,
+        startCol: 0,
         orientation: "horizontal"
     },
     {
@@ -393,7 +393,7 @@ const crosswordWords = [
         word: "TG",
         clue: "Tamara Grujić",
         startRow: 7,
-        startCol:0,
+        startCol: 0,
         orientation: "horizontal"
     },
     {
@@ -401,7 +401,7 @@ const crosswordWords = [
         word: "AM",
         clue: "Aleksandra Martinović",
         startRow: 8,
-        startCol:0,
+        startCol: 0,
         orientation: "horizontal"
     },
     {
@@ -409,7 +409,7 @@ const crosswordWords = [
         word: "ROLNA",
         clue: "Paket u obliku valjka",
         startRow: 9,
-        startCol:0,
+        startCol: 0,
         orientation: "horizontal"
     },
     {
@@ -417,7 +417,7 @@ const crosswordWords = [
         word: "SUPERSTAR",
         clue: "Naziv TV kanala sa slike",
         startRow: 11,
-        startCol:0,
+        startCol: 0,
         orientation: "horizontal"
     },
     {
@@ -425,7 +425,7 @@ const crosswordWords = [
         word: "S",
         clue: "Sumpor",
         startRow: 11,
-        startCol:0,
+        startCol: 0,
         orientation: "vertical"
     },
     {
@@ -433,7 +433,7 @@ const crosswordWords = [
         word: "RED",
         clue: "Niz",
         startRow: 10,
-        startCol:1,
+        startCol: 1,
         orientation: "horizontal"
     },
     {
@@ -441,7 +441,7 @@ const crosswordWords = [
         word: "R",
         clue: "Radius",
         startRow: 11,
-        startCol:4,
+        startCol: 4,
         orientation: "vertical"
     },
     {
@@ -449,7 +449,7 @@ const crosswordWords = [
         word: "PDF",
         clue: "Portable Document Format",
         startRow: 7,
-        startCol:3,
+        startCol: 3,
         orientation: "horizontal"
     },
     {
@@ -457,7 +457,7 @@ const crosswordWords = [
         word: "ABA",
         clue: "Jadranska liga u košarci",
         startRow: 8,
-        startCol:3,
+        startCol: 3,
         orientation: "horizontal"
     },
     {
@@ -465,7 +465,7 @@ const crosswordWords = [
         word: "ROSA",
         clue: " Pojavljuje su ujutru",
         startRow: 10,
-        startCol:5,
+        startCol: 5,
         orientation: "horizontal"
     },
     {
@@ -473,52 +473,63 @@ const crosswordWords = [
         word: "RS",
         clue: "Republika Srbija",
         startRow: 10,
-        startCol:5,
+        startCol: 5,
         orientation: "vertical"
-    },
-    {
-        number: 56,
-        word: "GEN",
-        clue: "Nasledni faktor",
-        startRow: 9,
-        startCol:6,
-        orientation: "horizontal"
     },
     {
         number: 57,
-        word: "GOT",
-        clue: "Igra prestola",
+        word: "GEN",
+        clue: "Nasledni faktor",
         startRow: 9,
-        startCol:6,
-        orientation: "vertical"
+        startCol: 6,
+        orientation: "horizontal"
     },
     {
         number: 58,
-        word: "BESA",
-        clue: "Domaća TV serija",
-        startRow: 8,
-        startCol:7,
+        word: "GOT",
+        clue: "Igra prestola",
+        startRow: 9,
+        startCol: 6,
         orientation: "vertical"
     },
     {
         number: 59,
-        word: "BU",
-        clue: "Dža ili",
+        word: "BESA",
+        clue: "Domaća TV serija",
         startRow: 8,
-        startCol:7,
-        orientation: "horizontal"
+        startCol: 7,
+        orientation: "vertical"
     },
     {
         number: 60,
+        word: "BU",
+        clue: "Dža ili",
+        startRow: 8,
+        startCol: 7,
+        orientation: "horizontal"
+    },
+    {
+        number: 61,
         word: "BUNAR",
         clue: "Domaća TV serija",
-        startRow:7,
-        startCol:8,
+        startRow: 7,
+        startCol: 8,
         orientation: "vertical"
     },
 ];
 
-// No gridImages array as requested.
+// New array to define images in the grid
+const gridImages = [
+    {
+        id: "mts-logo",
+        src: "./src/img.jpg", // Placeholder image for MTS Logo
+        alt: "MTS Logo",
+        startRow: 5, // Top-left row of the image
+        startCol: 9, // Top-left column of the image
+        rowSpan: 7, // Image spans 7 rows
+        colSpan: 6  // Image spans 6 columns
+    }
+];
 
 // Function to populate the solution grid with words and image markers
 function populateSolutionGrid() {
@@ -542,10 +553,21 @@ function populateSolutionGrid() {
         }
     });
 
-    // Removed image marker placement logic.
+    // 2. Place image markers in the solutionGrid
+    gridImages.forEach(imgData => {
+        for (let r = imgData.startRow; r < imgData.startRow + imgData.rowSpan; r++) {
+            for (let c = imgData.startCol; c < imgData.startCol + imgData.colSpan; c++) {
+                // Check against new GRID_ROWS and GRID_COLS
+                if (r >= 0 && r < GRID_ROWS && c >= 0 && c < GRID_COLS) {
+                    // Mark cells covered by an image with '#IMG#'
+                    solutionGrid[r][c] = '#IMG#';
+                }
+            }
+        }
+    });
 
     // 3. Mark remaining empty cells as black ('#')
-    // This fills any cell not covered by a word with a black cell marker
+    // This fills any cell not covered by a word or an image with a black cell marker
     for (let r = 0; r < GRID_ROWS; r++) {
         for (let k = 0; k < GRID_COLS; k++) {
             if (solutionGrid[r][k] === '') {
@@ -555,7 +577,7 @@ function populateSolutionGrid() {
     }
 }
 
-// Function to generate the HTML grid cells
+// Function to generate the HTML grid cells and place images
 function generateHtmlGrid() {
     crosswordGridElement = document.getElementById('crossword-grid');
     crosswordGridElement.innerHTML = ''; // Clear previous content
@@ -570,6 +592,9 @@ function generateHtmlGrid() {
 
             if (solutionGrid[r][k] === '#') { // Explicitly black cell
                 cell.classList.add('black');
+            } else if (solutionGrid[r][k] === '#IMG#') { // Cell covered by an image
+                cell.classList.add('image-cell-placeholder');
+                // No input element here, as it's part of an image
             } else { // It's a letter cell
                 const input = document.createElement('input');
                 input.type = 'text';
@@ -596,7 +621,35 @@ function generateHtmlGrid() {
         }
     }
 
-    // Removed image wrapper and image element creation logic.
+    // Now, add the image wrappers on top of the grid cells
+    gridImages.forEach(imgData => {
+        const imageWrapper = document.createElement('div');
+        imageWrapper.classList.add('crossword-image-wrapper');
+        // Set grid position and span using CSS Grid properties
+        // +1 because grid-column/row start from 1, not 0
+        imageWrapper.style.gridColumn = `${imgData.startCol + 1} / span ${imgData.colSpan}`;
+        imageWrapper.style.gridRow = `${imgData.startRow + 1} / span ${imgData.rowSpan}`;
+
+        const imgElement = document.createElement('img');
+        imgElement.src = imgData.src;
+        imgElement.alt = imgData.alt;
+        imgElement.loading = 'lazy'; // Improve performance for images
+        imgElement.style.width = '100%';
+        imgElement.style.height = '100%';
+        imgElement.style.objectFit = 'cover'; // Ensures image covers the area
+
+        // Add onerror handler to the image
+        imgElement.onerror = () => {
+            console.error(`Failed to load image: ${imgData.src}. Displaying placeholder background.`);
+            // Fallback: If image fails to load, set a background color on the wrapper
+            imageWrapper.style.backgroundColor = '#cccccc'; // Light gray fallback
+            // Optionally, display a placeholder text or icon
+            imageWrapper.innerHTML = `<span style="color: #666; font-size: 0.8em; text-align: center;"></span>`;
+        };
+
+        imageWrapper.appendChild(imgElement);
+        crosswordGridElement.appendChild(imageWrapper);
+    });
 }
 
 // Function to generate and display clues
@@ -642,7 +695,7 @@ function checkSolution() {
     for (let r = 0; r < GRID_ROWS; r++) {
         for (let k = 0; k < GRID_COLS; k++) {
             // Only check cells that are meant for letter input
-            if (solutionGrid[r][k] !== '#') {
+            if (solutionGrid[r][k] !== '#' && solutionGrid[r][k] !== '#IMG#') {
                 const inputElement = document.querySelector(`input[data-row="${r}"][data-col="${k}"]`);
                 if (inputElement) { // Ensure input element exists
                     filledCells++;
@@ -671,7 +724,7 @@ function checkSolution() {
 // Function to reset the game
 function resetGame() {
     initializeGrids(); // Reset internal grids (inputGrid is cleared)
-    populateSolutionGrid(); // Repopulate solutionGrid (words, black cells)
+    populateSolutionGrid(); // Repopulate solutionGrid (words, black cells, image markers)
     generateHtmlGrid(); // Regenerate the HTML grid based on the new state
     generateClues(); // Regenerate clues (if necessary, though they don't change)
 
@@ -701,8 +754,9 @@ function showClueTooltip(event) {
         console.log(`Mouse over cell: (${row}, ${col})`);
     }
 
-    if (!targetCell || targetCell.classList.contains('black')) {
-        console.log("Not a playable cell or is black. Not showing tooltip.");
+
+    if (!targetCell || targetCell.classList.contains('black') || targetCell.classList.contains('image-cell-placeholder')) {
+        console.log("Not a playable cell or is black/image placeholder. Not showing tooltip.");
         return; // Do nothing if it's not a playable cell
     }
 
@@ -837,7 +891,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Try horizontal
                 for (let c = col + 1; c < GRID_COLS; c++) { // Use GRID_COLS
                     // Find next cell that is not black
-                    if (solutionGrid[row][c] !== '#') {
+                    if (solutionGrid[row][c] !== '#' && solutionGrid[row][c] !== '#IMG#') { // Added #IMG# check
                         const nextInput = document.querySelector(`input[data-row="${row}"][data-col="${c}"]`);
                         if (nextInput) {
                             nextInput.focus();
@@ -851,7 +905,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     for (let r = row + 1; r < GRID_ROWS; r++) { // Use GRID_ROWS
                         for (let c = 0; c < GRID_COLS; c++) { // Use GRID_COLS
                             // Find next cell that is not black
-                            if (solutionGrid[r][c] !== '#') {
+                            if (solutionGrid[r][c] !== '#' && solutionGrid[r][c] !== '#IMG#') { // Added #IMG# check
                                 const nextInput = document.querySelector(`input[data-row="${r}"][data-col="${c}"]`);
                                 if (nextInput) {
                                     nextInput.focus();
@@ -898,7 +952,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Find the next input cell, skipping black cells
             let nextInput = null;
             while (nextRow >= 0 && nextRow < GRID_ROWS && nextCol >= 0 && nextCol < GRID_COLS) { // Use GRID_ROWS and GRID_COLS
-                if (solutionGrid[nextRow][nextCol] !== '#') {
+                if (solutionGrid[nextRow][nextCol] !== '#' && solutionGrid[nextRow][nextCol] !== '#IMG#') { // Added #IMG# check
                     nextInput = document.querySelector(`input[data-row="${nextRow}"][data-col="${nextCol}"]`);
                     if (nextInput) {
                         break; // Found an input cell
