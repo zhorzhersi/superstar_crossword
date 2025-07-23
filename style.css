@@ -33,8 +33,8 @@ body {
 h1 {
     color: #ED1A3B; /* Darker blue for headings */
     margin-bottom: 1rem; /* Smanjen margin-bottom */
-    font-size: clamp(1.5rem, 3.5vw, 2.5vw); /* Responzivna veličina fonta */
-    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.5vw)!important; /* Responzivna veličina fonta */
+    font-weight: 700 !important;
     text-align: center;
 }
 
