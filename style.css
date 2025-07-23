@@ -265,18 +265,22 @@ h1 {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     justify-content: center;
     align-items: center;
+    white-space: normal;
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: auto;
-    padding: 15px; /* Smanjen padding */
+    margin: 12px;
+    padding: 12px; /* Smanjen padding */
     border: 1px solid #888; /* Original border for modal */
     width: 90%; /* Veća širina na mobilnim telefonima */
-    max-width: 350px; /* Smanjen max-width */
+    max-width: 350px; 
+    /* max-height: 100px; */
     border-radius: 1rem;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     text-align: center;
+    align-items: center;
+   
 }
 
 .modal-close {

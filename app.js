@@ -684,7 +684,7 @@ function generateClues() {
 function showMessageModal(message) {
     const modal = document.getElementById('messageModal');
     const modalMessage = document.getElementById('modalMessage');
-    modalMessage.textContent = message;
+    modalMessage.innerHTML = message;
     modal.style.display = 'flex'; // Show modal
 }
 
@@ -725,7 +725,7 @@ function checkSolution() {
     if (allCorrect && filledCells === correctCells) {
         showMessageModal("Čestitamo! Rešili ste ukrštenicu!");
     } else {
-        showMessageModal("Neke reči su netačne. Proverite ponovo!");
+        showMessageModal("Neke reči su netačne. <br>Proverite crveno naznačena polja!");
     }
 }
 
