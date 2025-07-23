@@ -43,7 +43,7 @@ h1 {
     /* Koristimo minmax za fleksibilnije kolone koje se smanjuju i šire */
     grid-template-columns: repeat(15, minmax(20px, 1fr)); /* 15 kolona, min 20px po ćeliji */
     grid-template-rows: repeat(12, minmax(20px, 1fr));    /* 12 redova, min 20px po ćeliji */
-    border: 2px solid #a0aec0; /* Lighter gray border */
+    border: 2px solid #d51735; /* Lighter gray border */
     /* Max širina mreže, koristi min() da se prilagodi ekranu */
     max-width: min(600px, 95vw); /* Maksimalno 600px ili 95% širine viewporta */
     width: 100%; /* Osigurava da zauzima punu širinu kontejnera do max-width */
@@ -113,7 +113,7 @@ h1 {
     align-items: center;
     overflow: hidden;
     z-index: 5; /* Ensure it's above grid cells but below tooltips */
-    border: 2px solid #a0aec0; /* Lighter gray border for image */
+    border: 1px solid #d51735;   
     border-radius: 0rem;
     box-sizing: border-box;
     background-color: #ffffff; /* White background for the image wrapper */
@@ -177,11 +177,13 @@ h1 {
 }
 
 .clues-section {
-    background-color: #FFF5F6; /* Lighter background for questions */
+    background: linear-gradient(to bottom, #FFF5F6, #FFE0E5);
     border-radius: 0.75rem;
     padding: 1rem; /* Smanjen padding */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     flex: 1; /* Allow sections to grow */
+    /* border:1px solid #d51735; */
+    
 }
 
 .clues-section h2 {
