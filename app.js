@@ -729,6 +729,26 @@ function checkSolution() {
     }
 }
 
+
+// Funkcija za prikaz celog rešenja
+function showSolution() {
+    for (let r = 0; r < GRID_ROWS; r++) { // Koristite GRID_ROWS umesto DIMENZIJA_MATRICE
+        for (let k = 0; k < GRID_COLS; k++) { // Koristite GRID_COLS umesto DIMENZIJA_MATRICE
+            // Popunite samo input polja (ne crna polja ili polja sa slikama ako ih imate)
+            if (solutionGrid[r][k] !== '#' && solutionGrid[r][k] !== '#IMG#') { // Dodata provera za #IMG#
+                const inputElement = document.querySelector(`input[data-row="${r}"][data-col="${k}"]`);
+                if (inputElement) {
+                    inputElement.value = solutionGrid[r][k]; // Postavi tačno slovo
+                    inputElement.style.backgroundColor = 'transparent'; // Resetuj boju pozadine na default
+                }
+            }
+        }
+    }
+    showMessageModal("Prikazano je rešenje ukrštenice!");
+}
+
+
+
 // Function to reset the game
 function resetGame() {
     initializeGrids(); // Reset internal grids (inputGrid is cleared)
@@ -737,10 +757,10 @@ function resetGame() {
     generateClues(); // Regenerate clues (if necessary, though they don't change)
 
     // Reset background color of input cells to default
-    const inputs = document.querySelectorAll('#crossword-grid input');
-    inputs.forEach(input => {
-        input.style.backgroundColor = 'transparent';
-    });
+    const firstInput = document.querySelector('#crossword-grid input');
+    if (firstInput) {
+        firstInput.focus();
+    };
     showMessageModal("Igra je resetovana!");
 }
 
@@ -873,7 +893,7 @@ document.addEventListener('DOMContentLoaded', () => {
     populateSolutionGrid(); // Populate the solution grid with words and black cells
     generateHtmlGrid();    // Generate the HTML grid
     generateClues();      // Generate clues
-
+   
     // Initialize crosswordGridElement here, after it's declared in a higher scope
     // This ensures it's available when generateHtmlGrid and showClueTooltip are called.
     crosswordGridElement = document.getElementById('crossword-grid');
@@ -881,6 +901,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkSolutionBtn = document.getElementById('checkSolutionBtn');
     const resetGameBtn = document.getElementById('resetGameBtn');
     const modalCloseBtn = document.querySelector('#messageModal .modal-close');
+    // ... unutar document.addEventListener('DOMContentLoaded', () => { ...
+    const showSolutionBtn = document.getElementById('showSolutionBtn'); // Dohvati referencu na novo dugme
+// ...
+    showSolutionBtn.addEventListener('click', () => {
+        console.log("Show Solution button clicked!"); // Dodato za dijagnostiku
+        showSolution();
+    });
+
 
     // Event listener for letter input and navigation
     crosswordGridElement.addEventListener('input', (event) => {

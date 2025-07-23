@@ -95,6 +95,8 @@ h1 {
 .grid-cell input:focus {
     background-color: #bee3f8; /* Light blue on focus */
     border-radius: 0.25rem;
+    /* outline: 2px solid #3182ce; 
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.5); */
 }
 
 .clue-number {
@@ -295,4 +297,7 @@ h1 {
     color: black; /* Original hover color for close button */
     text-decoration: none;
     cursor: pointer;
+}
+.hidden-for-release {
+    display: none !important; /* Koristimo !important da osiguramo da se preklapa */
 }
