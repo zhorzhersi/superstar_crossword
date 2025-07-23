@@ -516,6 +516,14 @@ const crosswordWords = [
         startCol: 8,
         orientation: "vertical"
     },
+    {
+        number: 62,
+        word: "KLAN",
+        clue: "Domaća TV serija",
+        startRow: 1,
+        startCol: 11,
+        orientation: "horizontal"
+    },
 ];
 
 // New array to define images in the grid
