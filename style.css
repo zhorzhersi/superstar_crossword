@@ -52,6 +52,7 @@ h1 {
     position: relative; /* Needed for absolute positioning of image wrappers and tooltips */
     /* aspect-ratio na nivou mreže pomaže, ali individualne ćelije su ključ za kvadratnost */
     aspect-ratio: 15 / 12; /* Odnos kolona prema redovima za cijelu mrežu */
+   
 }
 
 .grid-cell {
