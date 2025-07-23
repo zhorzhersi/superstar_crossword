@@ -8,7 +8,7 @@
 }
 body {
     font-family: 'Antenna', sans-serif;
-    background-color: #f0f4f8; /* Light blue-gray background */
+    background-color: #f8f0f0; /* Light blue-gray background */
     color: #333;
     display: flex;
     flex-direction: column;
@@ -177,7 +177,7 @@ h1 {
 }
 
 .clues-section {
-    background-color: #edf2f7; /* Lighter background for questions */
+    background-color: #f8f0f0; /* Lighter background for questions */
     border-radius: 0.75rem;
     padding: 1rem; /* Smanjen padding */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
@@ -185,7 +185,7 @@ h1 {
 }
 
 .clues-section h2 {
-    color: #3182ce; /* Blue for question headings */
+    color: #ed1a3b; /* Blue for question headings */
     margin-bottom: 0.8rem; /* Smanjen margin-bottom */
     font-size: clamp(1.2rem, 3.5vw, 1.5rem); /* Responzivna veličina fonta */
     font-weight: 600;
@@ -224,13 +224,13 @@ h1 {
 }
 
 .btn-primary {
-    background-color: #4299e1; /* Blue */
+    background-color: #ed1a3b; 
     color: white;
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: #3182ce; /* Darker blue on hover */
+    background-color: #d51735; /* Darker blue on hover */
     transform: translateY(-2px);
 }
 
