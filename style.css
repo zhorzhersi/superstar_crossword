@@ -15,15 +15,15 @@ body {
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 10px; /* Smanjen padding za mobilne telefone */
 }
 
 #app-container {
     background-color: #ffffff;
     border-radius: 1.5rem; /* More rounded corners */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    max-width: 90%;
+    padding: 1rem; /* Smanjen padding za mobilne telefone */
+    max-width: 95%; /* Veća maksimalna širina na manjim ekranima */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -32,23 +32,26 @@ body {
 
 h1 {
     color: #2c5282; /* Darker blue for headings */
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem; /* Larger heading */
+    margin-bottom: 1rem; /* Smanjen margin-bottom */
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responzivna veličina fonta */
     font-weight: 700;
     text-align: center;
 }
 
 #crossword-grid {
     display: grid;
-    grid-template-columns: repeat(15, 1fr); /* 15 columns */
-    grid-template-rows: repeat(12, 1fr);    /* 12 rows */
+    /* Koristimo minmax za fleksibilnije kolone koje se smanjuju i šire */
+    grid-template-columns: repeat(15, minmax(20px, 1fr)); /* 15 kolona, min 20px po ćeliji */
+    grid-template-rows: repeat(12, minmax(20px, 1fr));    /* 12 redova, min 20px po ćeliji */
     border: 2px solid #a0aec0; /* Lighter gray border */
-    max-width: calc(15 * 40px); /* 15 columns * 40px per cell */
-    width: 100%; /* Ensure it takes full width of its container up to max-width */
-    margin-bottom: 2rem;
+    /* Max širina mreže, koristi min() da se prilagodi ekranu */
+    max-width: min(600px, 95vw); /* Maksimalno 600px ili 95% širine viewporta */
+    width: 100%; /* Osigurava da zauzima punu širinu kontejnera do max-width */
+    margin-bottom: 1.5rem; /* Smanjen margin-bottom */
     background-color: #09f334; /* Light green background for grid as requested */
     position: relative; /* Needed for absolute positioning of image wrappers and tooltips */
-    aspect-ratio: 15 / 12; /* Ratio of columns to rows for the overall grid */
+    /* aspect-ratio na nivou mreže pomaže, ali individualne ćelije su ključ za kvadratnost */
+    aspect-ratio: 15 / 12; /* Odnos kolona prema redovima za cijelu mrežu */
 }
 
 .grid-cell {
@@ -59,8 +62,8 @@ h1 {
     position: relative;
     background-color: #ffffff; /* White background for active cells */
     box-sizing: border-box; /* Ensure padding/border doesn't increase size */
-    width: 40px; /* Define a fixed width for each cell */
-    height: 40px; /* Define a fixed height for each cell, equal to width for square */
+    aspect-ratio: 1 / 1; /* Ključno: Osigurava da je svaka ćelija kvadratna */
+    /* Uklonjene fiksne širine i visine */
 }
 
 .grid-cell.black {
@@ -81,7 +84,7 @@ h1 {
     text-align: center;
     border: none;
     outline: none;
-    font-size: 1.2em;
+    font-size: clamp(0.8em, 2.5vw, 1.2em); /* Responzivna veličina fonta za input */
     font-weight: bold;
     text-transform: uppercase;
     background-color: transparent;
@@ -97,7 +100,7 @@ h1 {
     position: absolute;
     top: 2px;
     left: 2px;
-    font-size: 0.65em; /* Slightly larger clue number */
+    font-size: clamp(0.5em, 1.5vw, 0.65em); /* Responzivna veličina fonta za brojeve tragova */
     color: #667eea; /* Purple-blue for numbers */
     font-weight: 600;
 }
@@ -129,11 +132,11 @@ h1 {
     color: #fff; /* White text */
     padding: 10px;
     border-radius: 0.5rem;
-    font-size: 0.85em;
+    font-size: clamp(0.75em, 2.5vw, 0.85em); /* Responzivna veličina fonta za tooltip */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 10; /* Ensure it's above everything else */
-    min-width: 200px; /* Minimum width for readability */
-    max-width: 300px; /* Maximum width */
+    min-width: 150px; /* Smanjen min-width */
+    max-width: 250px; /* Smanjen max-width */
     pointer-events: none; /* Allow mouse events to pass through to the cell below */
     opacity: 0; /* Hidden by default */
     transition: opacity 0.2s ease-in-out; /* Smooth fade in/out */
@@ -160,7 +163,7 @@ h1 {
 #clues-container {
     display: flex;
     flex-direction: column; /* Stack on small screens */
-    gap: 1.5rem; /* Slightly smaller gap */
+    gap: 1rem; /* Smanjen gap */
     width: 100%;
     max-width: 800px;
 }
@@ -175,15 +178,15 @@ h1 {
 .clues-section {
     background-color: #edf2f7; /* Lighter background for questions */
     border-radius: 0.75rem;
-    padding: 1.5rem;
+    padding: 1rem; /* Smanjen padding */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     flex: 1; /* Allow sections to grow */
 }
 
 .clues-section h2 {
     color: #3182ce; /* Blue for question headings */
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 0.8rem; /* Smanjen margin-bottom */
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem); /* Responzivna veličina fonta */
     font-weight: 600;
 }
 
@@ -193,28 +196,29 @@ h1 {
 }
 
 .clues-section li {
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
+    margin-bottom: 0.4rem; /* Smanjen margin-bottom */
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem); /* Responzivna veličina fonta */
     line-height: 1.4;
     color: #4a5568; /* Darker gray for list items */
 }
 
 .button-group {
-    margin-top: 4rem; /* Increased margin-top to move buttons up */
-    margin-bottom: 2rem;
+    margin-top: 3rem; /* Prilagođen margin-top za dugmad */
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap; /* Omogućava prelamanje dugmadi na manjim ekranima */
+    gap: 0.8rem; /* Smanjen gap */
     justify-content: center;
     width: 100%;
 }
 
 .btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.2rem; /* Smanjen padding dugmadi */
     border-radius: 0.75rem; /* Rounded buttons */
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responzivna veličina fonta za dugmad */
 }
 
 .btn-primary {
@@ -257,10 +261,10 @@ h1 {
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
+    padding: 15px; /* Smanjen padding */
     border: 1px solid #888; /* Original border for modal */
-    width: 80%;
-    max-width: 400px;
+    width: 90%; /* Veća širina na mobilnim telefonima */
+    max-width: 350px; /* Smanjen max-width */
     border-radius: 1rem;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     text-align: center;
@@ -269,7 +273,7 @@ h1 {
 .modal-close {
     color: #aaa; /* Original color for close button */
     float: right;
-    font-size: 28px;
+    font-size: 24px; /* Smanjen font-size */
     font-weight: bold;
 }
 
