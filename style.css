@@ -31,9 +31,9 @@ body {
 }
 
 h1 {
-    color: #2c5282; /* Darker blue for headings */
+    color: #ED1A3B; /* Darker blue for headings */
     margin-bottom: 1rem; /* Smanjen margin-bottom */
-    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responzivna veličina fonta */
+   font-size: clamp(1.5rem, 4vw + 0.5rem, 3rem); /* Responzivna veličina fonta */
     font-weight: 700;
     text-align: center;
 }
@@ -101,8 +101,8 @@ h1 {
     position: absolute;
     top: 2px;
     left: 2px;
-    font-size: clamp(0.5em, 1.5vw, 0.65em); /* Responzivna veličina fonta za brojeve tragova */
-    color: #667eea; /* Purple-blue for numbers */
+    font-size: clamp(0.3em, 1.5vw, 0.65em); /* Responzivna veličina fonta za brojeve tragova */
+    color: #d81836; /* Purple-blue for numbers */
     font-weight: 600;
 }
 
