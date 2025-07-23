@@ -529,9 +529,9 @@ const crosswordWords = [
 // New array to define images in the grid
 const gridImages = [
     {
-        id: "mts-logo",
+        id: "img",
         src: "./src/img.jpg", // Placeholder image for MTS Logo
-        alt: "MTS Logo",
+        alt: "SUPERSTAR Logo",
         startRow: 5, // Top-left row of the image
         startCol: 9, // Top-left column of the image
         rowSpan: 7, // Image spans 7 rows
