@@ -48,7 +48,7 @@ h1 {
     max-width: min(600px, 95vw); /* Maksimalno 600px ili 95% širine viewporta */
     width: 100%; /* Osigurava da zauzima punu širinu kontejnera do max-width */
     margin-bottom: 1.5rem; /* Smanjen margin-bottom */
-    background-color: #09f334; /* Light green background for grid as requested */
+    background-color: #4a5568; /* Light green background for grid as requested */
     position: relative; /* Needed for absolute positioning of image wrappers and tooltips */
     /* aspect-ratio na nivou mreže pomaže, ali individualne ćelije su ključ za kvadratnost */
     aspect-ratio: 15 / 12; /* Odnos kolona prema redovima za cijelu mrežu */
@@ -113,7 +113,7 @@ h1 {
     overflow: hidden;
     z-index: 5; /* Ensure it's above grid cells but below tooltips */
     border: 2px solid #a0aec0; /* Lighter gray border for image */
-    border-radius: 0.5rem;
+    border-radius: 0rem;
     box-sizing: border-box;
     background-color: #ffffff; /* White background for the image wrapper */
 }
@@ -204,6 +204,7 @@ h1 {
 
 .button-group {
     margin-top: 3rem; /* Prilagođen margin-top za dugmad */
+    margin-bottom: 1rem;
     display: flex;
     flex-wrap: wrap; /* Omogućava prelamanje dugmadi na manjim ekranima */
     gap: 0.8rem; /* Smanjen gap */
