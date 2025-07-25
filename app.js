@@ -524,6 +524,14 @@ const crosswordWords = [
         startCol: 11,
         orientation: "horizontal"
     },
+    {
+        number: 63,
+        word: "LEP",
+        clue: "Krasan, dopadljiv",
+        startRow: 9,
+        startCol: 2,
+        orientation: "vertical"
+    },
 ];
 
 // New array to define images in the grid
