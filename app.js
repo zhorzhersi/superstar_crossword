@@ -1045,7 +1045,7 @@ document.addEventListener('DOMContentLoaded', () => {
     genericShareBtn.addEventListener('click', async () => {
         const shareData = {
             title: 'Ukrštene Reči',
-            text: 'Izazov rešen! Probaj i ti!',
+            text: 'Reši i ti ovu ovu ukrštenicu!',
             url: window.location.href // Deli link trenutne stranice
         };
          if (navigator.share) {
