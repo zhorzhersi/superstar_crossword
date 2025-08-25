@@ -302,15 +302,15 @@ h1 {
     display: none !important; 
 }
 .btn.btn-icon {
-    background-color: #aeaeae; /* Malo tamnija siva */
+    background-color: #c4c8cd; /* Malo tamnija siva */
     padding: 0.6rem;
     /* Fiksne dimenzije da bude kvadratno */
     aspect-ratio: 1 / 1;
-    color: #555555;
+    color: #656669;
 }
 
 .btn.btn-icon:hover {
-    background-color: #676767;
+    background-color: #a8a9ab;
 }
 
 /* Stil za Facebook dugme u modalu */
