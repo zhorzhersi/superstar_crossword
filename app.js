@@ -689,11 +689,20 @@ function generateClues() {
 }
 
 // Function to display a message modal
-function showMessageModal(message) {
+function showMessageModal(message, isSuccess = false) {
     const modal = document.getElementById('messageModal');
     const modalMessage = document.getElementById('modalMessage');
+    const facebookBtn = document.getElementById('facebookShareBtn'); // Dodajemo referencu
+
     modalMessage.innerHTML = message;
     modal.style.display = 'flex'; // Show modal
+
+    // Ako je poruka o uspehu, prikaži Facebook dugme, inače ga sakrij
+    if (isSuccess) {
+        facebookBtn.style.display = 'inline-block';
+    } else {
+        facebookBtn.style.display = 'none';
+    }
 }
 
 // Function to close the message modal
@@ -730,9 +739,11 @@ function checkSolution() {
         }
     }
 
-    if (allCorrect && filledCells === correctCells) {
-        showMessageModal("Čestitamo! Rešili ste ukrštenicu!");
+   if (allCorrect && filledCells === correctCells) {
+        // Ovde prosledite 'true' kao drugi argument
+        showMessageModal("Čestitamo! Rešili ste ukrštenicu!", true);
     } else {
+        // Ovde ne morate ništa da menjate, jer je 'isSuccess' podrazumevano 'false'
         showMessageModal("Neke reči su netačne. <br>Proverite crveno naznačena polja!");
     }
 }
@@ -911,7 +922,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCloseBtn = document.querySelector('#messageModal .modal-close');
     // ... unutar document.addEventListener('DOMContentLoaded', () => { ...
     const showSolutionBtn = document.getElementById('showSolutionBtn'); // Dohvati referencu na novo dugme
+     const genericShareBtn = document.getElementById('genericShareBtn');
+    const facebookShareBtn = document.getElementById('facebookShareBtn');
 // ...
+
+
+
     showSolutionBtn.addEventListener('click', () => {
         console.log("Show Solution button clicked!"); // Dodato za dijagnostiku
         showSolution();
@@ -1026,6 +1042,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener for "Reset Game" button
     resetGameBtn.addEventListener('click', resetGame);
 
+    genericShareBtn.addEventListener('click', async () => {
+        const shareData = {
+            title: 'Ukrštene Reči',
+            text: 'Izazov rešen! Probaj i ti!',
+            url: window.location.href // Deli link trenutne stranice
+        };
+         if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+                console.log('Uspešno podeljeno!');
+            } catch (err) {
+                console.error('Greška pri deljenju:', err);
+            }
+        } else {
+            // Fallback za desktop browsere: kopiraj link u klipbord
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                showMessageModal("Link je kopiran u klipbord!");
+            } catch (err) {
+                console.error('Neuspešno kopiranje:', err);
+                showMessageModal("Greška pri kopiranju linka.");
+            }
+        }
+    });
+
+     facebookShareBtn.addEventListener('click', () => {
+        const pageUrl = window.location.href;
+        const shareText = "Izazov rešen! Probaj i ti!";
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}&quote=${encodeURIComponent(shareText)}`;
+
+        // Otvori prozor za deljenje
+        window.open(facebookUrl, '_blank', 'width=600,height=400');
+    });
+
     // Event listener for closing the modal
     modalCloseBtn.addEventListener('click', closeMessageModal);
     window.addEventListener('click', (event) => {
@@ -1034,4 +1084,6 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMessageModal();
         }
     });
+    
+
 });
