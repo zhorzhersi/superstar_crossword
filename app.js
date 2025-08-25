@@ -752,7 +752,7 @@ function checkSolution() {
 
    if (allCorrect && filledCells === correctCells) {
         // Umesto 'true', sada šaljemo string 'success'
-        showMessageModal("Čestitamo! Rešili ste ukrštenicu!", 'success');
+        showMessageModal("Čestitamo! Rešili ste mts ukrštenicu!", 'success');
     } else {
         // Ovde šaljemo string 'error'
         showMessageModal("Neke reči su netačne. <br>Proverite crveno naznačena polja!", 'error');
@@ -774,7 +774,7 @@ function showSolution() {
             }
         }
     }
-    showMessageModal("Prikazano je rešenje ukrštenice!");
+    showMessageModal("Prikazano je rešenje mts ukrštenice!");
 }
 
 
@@ -791,7 +791,7 @@ function resetGame() {
     if (firstInput) {
         firstInput.focus();
     };
-    showMessageModal("Igra je resetovana!");
+    showMessageModal("Ukrštenica je resetovana!");
 }
 
 // Function to show a tooltip with clue information
@@ -1055,8 +1055,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     genericShareBtn.addEventListener('click', async () => {
         const shareData = {
-            title: 'Ukrštene Reči',
-            text: 'Reši i ti ovu ovu ukrštenicu!',
+            title: 'Mts ukrštene Reči',
+            text: 'Reši i ti mts ukrštenicu!',
             url: window.location.href // Deli link trenutne stranice
         };
          if (navigator.share) {
@@ -1080,7 +1080,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
      facebookShareBtn.addEventListener('click', () => {
         const pageUrl = window.location.href;
-        const shareText = "Izazov rešen! Probaj i ti!";
+        const shareText = "Ukrštenica je rešena! Probaj i ti!";
         const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}&quote=${encodeURIComponent(shareText)}`;
 
         // Otvori prozor za deljenje
