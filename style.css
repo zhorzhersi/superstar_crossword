@@ -325,3 +325,81 @@ h1 {
 .btn.btn-facebook:hover {
     background-color: #166FE5; /* Malo tamnija plava na hover */
 }
+/* Keyframe animacija za pojavljivanje */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Osnovni stil za kontejner ikonice */
+#modal-icon {
+    margin: 0 auto 15px auto; /* Razmak ispod ikonice */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Da bude krug */
+    position: relative;
+    display: none; /* Sakriven po defaultu */
+    box-sizing: border-box;
+    animation: scaleIn 0.3s ease-in-out; /* Primenjujemo animaciju */
+}
+
+/* Stil za USPEH - Zeleni znak ✓ */
+#modal-icon.success {
+    display: block; /* Prikazujemo ga kad ima klasu .success */
+    border: 4px solid #4CAF50; /* Zeleni krug */
+}
+
+/* Crtanje znaka ✓ pomoću CSS-a */
+#modal-icon.success::after {
+    content: '';
+    position: absolute;
+    left: 26px;
+    top: 13px;
+    width: 20px;
+    height: 40px;
+    border-style: solid;
+    border-color: #4CAF50;
+    border-width: 0 6px 6px 0;
+    transform: rotate(45deg);
+}
+
+/* STIL ZA GREŠKU - Crveni znak ✗ (sa ispravljenim centriranjem) */
+#modal-icon.error {
+    display: block;
+    border: 4px solid #F44336; /* Crveni krug */
+}
+
+/* Crtanje znaka ✗ pomoću dva pseudo-elementa */
+#modal-icon.error::before,
+#modal-icon.error::after {
+    content: '';
+    position: absolute;
+    
+    /* Postavljamo početnu tačku na centar kruga */
+    left: 50%;
+    top: 50%;
+    
+    /* Definišemo dimenzije linija */
+    width: 6px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #F44336;
+}
+
+/* Prva linija X-a, rotirana za 45 stepeni */
+#modal-icon.error::before {
+    /* Savršeno centriranje i rotacija */
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Druga linija X-a, rotirana za -45 stepeni */
+#modal-icon.error::after {
+    /* Savršeno centriranje i rotacija */
+    transform: translate(-50%, -50%) rotate(-45deg);
+}

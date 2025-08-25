@@ -689,16 +689,27 @@ function generateClues() {
 }
 
 // Function to display a message modal
-function showMessageModal(message, isSuccess = false) {
+function showMessageModal(message, type = 'neutral') { // type može biti 'success', 'error' ili 'neutral'
     const modal = document.getElementById('messageModal');
     const modalMessage = document.getElementById('modalMessage');
-    const facebookBtn = document.getElementById('facebookShareBtn'); // Dodajemo referencu
+    const facebookBtn = document.getElementById('facebookShareBtn');
+    const icon = document.getElementById('modal-icon'); // Dohvatamo kontejner za ikonicu
+
+    // Prvo resetujemo klase ikonice
+    icon.className = ''; 
+
+    // Dodajemo odgovarajuću klasu u zavisnosti od tipa poruke
+    if (type === 'success') {
+        icon.classList.add('success');
+    } else if (type === 'error') {
+        icon.classList.add('error');
+    }
 
     modalMessage.innerHTML = message;
-    modal.style.display = 'flex'; // Show modal
+    modal.style.display = 'flex';
 
-    // Ako je poruka o uspehu, prikaži Facebook dugme, inače ga sakrij
-    if (isSuccess) {
+    // Prikazujemo Facebook dugme samo u slučaju uspeha
+    if (type === 'success') {
         facebookBtn.style.display = 'inline-block';
     } else {
         facebookBtn.style.display = 'none';
@@ -740,11 +751,11 @@ function checkSolution() {
     }
 
    if (allCorrect && filledCells === correctCells) {
-        // Ovde prosledite 'true' kao drugi argument
-        showMessageModal("Čestitamo! Rešili ste ukrštenicu!", true);
+        // Umesto 'true', sada šaljemo string 'success'
+        showMessageModal("Čestitamo! Rešili ste ukrštenicu!", 'success');
     } else {
-        // Ovde ne morate ništa da menjate, jer je 'isSuccess' podrazumevano 'false'
-        showMessageModal("Neke reči su netačne. <br>Proverite crveno naznačena polja!");
+        // Ovde šaljemo string 'error'
+        showMessageModal("Neke reči su netačne. <br>Proverite crveno naznačena polja!", 'error');
     }
 }
 
