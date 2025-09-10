@@ -70,7 +70,7 @@ const crosswordWords = [
     },
     {
         number: 6,
-        word: "STI",
+        word: "TSI",
         clue: "Turbocharged Stratified Injection (skr.)",
         startRow: 0,
         startCol: 3,
@@ -445,14 +445,7 @@ const crosswordWords = [
         startCol: 13,
         orientation: "vertical"
     },
-    {
-        number: 53,
-        word: "BIT",
-        clue: "naziv nove mts tarife za mlade",
-        startRow: 2,
-        startCol: 13,
-        orientation: "vertical"
-    },
+   
 
     
 ];
