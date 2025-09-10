@@ -351,7 +351,7 @@ const crosswordWords = [
     {
         number: 41,
         word: "NOV[LJ]ANI",
-        clue: "Jedinica za merenje površine zemljišta",
+        clue: "Stanovnici Herceg Novog",
         startRow: 4,
         startCol: 6,
         orientation: "vertical"
