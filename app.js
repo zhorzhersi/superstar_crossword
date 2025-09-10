@@ -399,7 +399,7 @@ const crosswordWords = [
     {
         number: 47,
         word: "ZVRK",
-        clue: "Lična zamenica",
+        clue: "Naziv nove mts tarife za najmlađe",
         startRow: 1,
         startCol: 9,
         orientation: "horizontal"
@@ -440,7 +440,7 @@ const crosswordWords = [
     {
         number: 52,
         word: "BIT",
-        clue: "naziv nove mts tarife za mlade",
+        clue: "Naziv nove mts tarife za mlade",
         startRow: 2,
         startCol: 13,
         orientation: "vertical"
