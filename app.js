@@ -1,6 +1,6 @@
-// Grid dimensions (12 rows x 15 columns)
-const GRID_ROWS = 12;
-const GRID_COLS = 15;
+// Grid dimensions 
+const GRID_ROWS = 11;
+const GRID_COLS = 14;
 // Internal grid to store solutions (letters, '#', or '#IMG#')
 let solutionGrid = [];
 // Internal grid to store user input
@@ -30,520 +30,443 @@ function initializeGrids() {
 const crosswordWords = [
     {
         number: 1,
-        word: "JUŽNIVETAR",
-        clue: "Domaća TV serija",
-        startRow: 0,
-        startCol: 0,
-        orientation: "vertical"
-    },
-    {
-        number: 2,
-        word: "JUNACINAŠEGDOBA",
-        clue: "Domaća TV serija",
+        word: "POSTPEJDTARIFA",
+        clue: "Suprotno od pripejd tarife",
         startRow: 0,
         startCol: 0,
         orientation: "horizontal"
     },
     {
+        number: 2,
+        word: "PUSTOLOVINA",
+        clue: "Avantura",
+        startRow: 0,
+        startCol: 0,
+        orientation: "vertical"
+    },
+    {
         number: 3,
-        word: "UG",
-        clue: "Internet kod Uganda",
+        word: "USISIVAČ",
+        clue: "Mali kućni aparat",
         startRow: 1,
         startCol: 0,
         orientation: "horizontal"
     },
     {
         number: 4,
-        word: "UGAO",
-        clue: "Oštar, tup ili pravi",
+        word: "OSTATI",
+        clue: "Ne otići",
         startRow: 0,
         startCol: 1,
         orientation: "vertical"
     },
     {
         number: 5,
-        word: "N",
-        clue: "Sever",
+        word: "SIRTAKI",
+        clue: "Najpoznatiji grčki ples",
         startRow: 0,
         startCol: 2,
         orientation: "vertical"
     },
     {
         number: 6,
-        word: "A",
-        clue: "Australija",
+        word: "STI",
+        clue: "Turbocharged Stratified Injection (skr.)",
         startRow: 0,
         startCol: 3,
         orientation: "vertical"
     },
     {
         number: 7,
-        word: "ŽAD",
-        clue: "Mineral zelene boje",
+        word: "STRIKAN",
+        clue: "Stric odmila",
         startRow: 2,
         startCol: 0,
         orientation: "horizontal"
     },
     {
         number: 8,
-        word: "DVA",
-        clue: "Jednocifreni broj",
-        startRow: 2,
-        startCol: 2,
-        orientation: "vertical"
+        word: "TAT",
+        clue: "Grad u Mađarskoj",
+        startRow: 3,
+        startCol: 0,
+        orientation: "horizontal"
     },
     {
         number: 9,
-        word: "CRNASVADBA",
-        clue: "Domaća TV serija",
+        word: "PIKANTAN",
+        clue: "Snažno začinjen",
         startRow: 0,
         startCol: 4,
         orientation: "vertical"
     },
     {
         number: 10,
-        word: "IMUN",
-        clue: "Otporan na bolesti",
+        word: "EVA",
+        clue: "Ime prve žene",
         startRow: 0,
         startCol: 5,
         orientation: "vertical"
     },
     {
         number: 11,
-        word: "NEMIRNI",
-        clue: "Domaća TV serija",
+        word: "JAN",
+        clue: "Često muško nemačko ime",
         startRow: 0,
         startCol: 6,
         orientation: "vertical"
     },
     {
         number: 12,
-        word: "A",
-        clue: "Angola",
+        word: "DČ",
+        clue: "Dragomir Čumić",
         startRow: 0,
         startCol: 7,
         orientation: "vertical"
     },
     {
         number: 13,
-        word: "NOVČANIK",
-        clue: "Buđelar",
-        startRow: 3,
+        word: "OTA",
+        clue: "Bežični prenospodataka (eng.)",
+        startRow: 4,
         startCol: 0,
         orientation: "horizontal"
     },
     {
         number: 14,
-        word: "ČII",
-        clue: "Češko-italijanski institut",
-        startRow: 3,
-        startCol: 3,
-        orientation: "vertical"
+        word: "LIK",
+        clue: "Crte lica",
+        startRow: 5,
+        startCol: 0,
+        orientation: "horizontal"
     },
     {
         number: 15,
-        word: "NUM",
-        clue: "Broj, engleski, skraćeno",
-        startRow: 2,
-        startCol: 4,
+        word: "O",
+        clue: "Okruglo slovo",
+        startRow: 6,
+        startCol: 0,
         orientation: "horizontal"
     },
     {
         number: 16,
-        word: "RME",
-        clue: "Reusable Medical Equipment",
-        startRow: 1,
-        startCol: 4,
+        word: "VI",
+        clue: "Lična zamenica",
+        startRow: 7,
+        startCol: 0,
         orientation: "horizontal"
     },
     {
         number: 17,
-        word: "ŠOK",
-        clue: "Može biti anafilaktički",
+        word: "T",
+        clue: "Tona (skr.)",
         startRow: 0,
         startCol: 8,
         orientation: "vertical"
     },
     {
         number: 18,
-        word: "OP",
-        clue: "`Opa` kraće",
-        startRow: 1,
-        startCol: 8,
-        orientation: "horizontal"
-    },
-    {
-        number: 19,
-        word: "KIP",
-        clue: "Statua",
-        startRow: 2,
-        startCol: 8,
-        orientation: "horizontal"
-    },
-    {
-        number: 20,
-        word: "KAKA",
-        clue: "Brazilski fudbaler",
-        startRow: 3,
-        startCol: 7,
-        orientation: "vertical"
-    },
-    {
-        number: 21,
-        word: "KA",
-        clue: "Kuzmanović Andrija",
-        startRow: 3,
-        startCol: 9,
-        orientation: "horizontal"
-    },
-    {
-        number: 22,
-        word: "SA",
-        clue: "Srećković Aleksandar",
-        startRow: 4,
-        startCol: 8,
-        orientation: "vertical"
-    },
-    {
-        number: 23,
-        word: "EPIKA",
-        clue: "Jedan književni rod",
+        word: "AZIJA",
+        clue: "Jedan kontinent",
         startRow: 0,
         startCol: 9,
         orientation: "vertical"
     },
     {
-        number: 24,
-        word: "G",
-        clue: "Gram",
+        number: 19,
+        word: "RV",
+        clue: "Ratno vazduhoplovstvo (skr.)",
         startRow: 0,
         startCol: 10,
         orientation: "vertical"
     },
     {
-        number: 25,
-        word: "DK",
-        clue: "Danska",
+        number: 20,
+        word: "IRVAS",
+        clue: "Severni jelen",
         startRow: 0,
         startCol: 11,
         orientation: "vertical"
     },
     {
-        number: 26,
-        word: "OLUJA",
-        clue: "Domaća TV serija",
+        number: 21,
+        word: "FK",
+        clue: "Fudbalski klub (skr.)",
         startRow: 0,
         startCol: 12,
         orientation: "vertical"
     },
     {
-        number: 27,
-        word: "BAHAT",
-        clue: "Arogantan, bezobrazan",
+        number: 22,
+        word: "A",
+        clue: "Prvo slovo azbuke",
         startRow: 0,
         startCol: 13,
         orientation: "vertical"
     },
     {
+        number: 23,
+        word: "IVA",
+        clue: "Popularno žensko ime",
+        startRow: 8,
+        startCol: 0,
+        orientation: "horizontal"
+    },
+    {
+        number: 24,
+        word: "NASTAVNIK",
+        clue: "Predavač u osnovnoj školi",
+        startRow: 9,
+        startCol: 0,
+        orientation: "horizontal"
+    },
+    {
+        number: 25,
+        word: "ANALITIKA",
+        clue: "Teorija analize",
+        startRow: 10,
+        startCol: 0,
+        orientation: "horizontal"
+    },
+    {
+        number: 26,
+        word: "TL",
+        clue: "Talijum",
+        startRow: 9,
+        startCol: 3,
+        orientation: "vertical"
+    },
+    {
+        number: 27,
+        word: "AI",
+        clue: "Veštačka inteligencija (eng)",
+        startRow: 9,
+        startCol: 4,
+        orientation: "vertical"
+    },
+    {
         number: 28,
-        word: "ANO",
-        clue: "Access Network Operator",
-        startRow: 0,
-        startCol: 14,
+        word: "VT",
+        clue: "Viša tarifa (skr.)",
+        startRow: 9,
+        startCol: 5,
         orientation: "vertical"
     },
     {
         number: 29,
-        word: "PAD",
-        clue: "Domaća TV serija",
-        startRow: 2,
-        startCol: 10,
-        orientation: "vertical"
+        word: "ANA",
+        clue: "Naša bivša teniserka Ivanović",
+        startRow: 8,
+        startCol: 6,
+        orientation: "horizontal"
     },
     {
         number: 30,
-        word: "UHO",
-        clue: ".... Grlo, nos",
-        startRow: 2,
-        startCol: 12,
+        word: "[LJ]A",
+        clue: "Inicijali jugoslovenske glumice Ljubice Adžović",
+        startRow: 7,
+        startCol: 6,
+        orientation: "horizontal"
+    },
+    {
+        number: 34,
+        word: "VČ",
+        clue: "Vinston Čerčil",
+        startRow: 6,
+        startCol: 6,
         orientation: "horizontal"
     },
     {
         number: 31,
-        word: "JA",
-        clue: "Jovanović Anđela",
-        startRow: 3,
-        startCol: 12,
-        orientation: "horizontal"
-    },
-    {
-        number: 32,
-        word: "ATI",
-        clue: "Konji",
-        startRow: 4,
-        startCol: 12,
-        orientation: "horizontal"
-    },
-    {
-        number: 33,
-        word: "I",
-        clue: "Irska",
-        startRow: 4,
-        startCol: 14,
+        word: "AKA",
+        clue: "'Also known as'",
+        startRow: 8,
+        startCol: 8,
         orientation: "vertical"
     },
     {
-        number: 34,
-        word: "I",
-        clue: "Italija",
-        startRow: 4,
-        startCol: 0,
+        number: 32,
+        word: "ASA",
+        clue: "Army Security Agency",
+        startRow: 8,
+        startCol: 2,
+        orientation: "vertical"
+    },
+    {
+        number: 33,
+        word: "NN",
+        clue: "Nepoznata osoba",
+        startRow: 7,
+        startCol: 3,
         orientation: "horizontal"
     },
     {
         number: 35,
-        word: "VD",
-        clue: "Dršilac dužnosti",
-        startRow: 5,
-        startCol: 0,
-        orientation: "horizontal"
+        word: "IVAN",
+        clue: "Često muško ime",
+        startRow: 7,
+        startCol: 1,
+        orientation: "vertical"
     },
     {
         number: 36,
-        word: "AIS",
-        clue: "Automatski Identifikacioni Sistem",
-        startRow: 4,
+        word: "INA",
+        clue: "Ines odmila",
+        startRow: 6,
         startCol: 2,
         orientation: "horizontal"
     },
     {
         number: 37,
-        word: "DUGMORU",
-        clue: "Domaća TV serija",
+        word: "TROVO",
+        clue: "Platforma za strimovanje sadržaja",
         startRow: 5,
-        startCol: 1,
-        orientation: "vertical"
+        startCol: 4,
+        orientation: "horizontal"
     },
     {
         number: 38,
-        word: "RASAD",
-        clue: "Biljke za presađivanje",
+        word: "NANO",
+        clue: "Prefiks za milijarditi deo",
         startRow: 4,
-        startCol: 6,
+        startCol: 4,
         orientation: "horizontal"
     },
     {
         number: 39,
         word: "A",
-        clue: "Alžir",
-        startRow: 5,
-        startCol: 5,
-        orientation: "vertical"
+        clue: "Austrija",
+        startRow: 3,
+        startCol: 4,
+        orientation: "horizontal"
     },
     {
         number: 40,
-        word: "IVANKA",
-        clue: "Ćerka Ivane i Donalda Trampa",
-        startRow: 5,
-        startCol: 3,
-        orientation: "horizontal"
+        word: "AR",
+        clue: "Jedinica za merenje površine zemljišta",
+        startRow: 4,
+        startCol: 5,
+        orientation: "vertical"
     },
     {
         number: 41,
-        word: "A",
-        clue: "Austrija",
-        startRow: 6,
-        startCol: 4,
-        orientation: "horizontal"
+        word: "NOV[LJ]ANI",
+        clue: "Jedinica za merenje površine zemljišta",
+        startRow: 4,
+        startCol: 6,
+        orientation: "vertical"
     },
     {
         number: 42,
-        word: "PANDA",
-        clue: "Model Fiatovog automobila (MN)",
-        startRow: 7,
-        startCol: 3,
-        orientation: "vertical"
+        word: "NAJMA[NJ]I",
+        clue: "Superlativ prideva mali",
+        startRow: 3,
+        startCol: 7,
+        orientation: "horizontal"
     },
     {
         number: 43,
-        word: "IA",
-        clue: "Industraija alata",
-        startRow: 6,
-        startCol: 6,
-        orientation: "horizontal"
+        word: "NOVČANIK",
+        clue: "Buđelar",
+        startRow: 3,
+        startCol: 7,
+        orientation: "vertical"
     },
     {
         number: 44,
-        word: "FA",
-        clue: "do,re, mi..sol",
-        startRow: 7,
-        startCol: 5,
-        orientation: "vertical"
-    },
-    {
-        number: 45,
-        word: "EU",
-        clue: "Evropska unija",
-        startRow: 6,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 46,
-        word: "TG",
-        clue: "Tamara Grujić",
-        startRow: 7,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 47,
-        word: "AM",
-        clue: "Aleksandra Martinović",
-        startRow: 8,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 48,
-        word: "ROLNA",
-        clue: "Paket u obliku valjka",
-        startRow: 9,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 49,
-        word: "SUPERSTAR",
-        clue: "Naziv TV kanala sa slike",
-        startRow: 11,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 50,
-        word: "S",
-        clue: "Sumpor",
-        startRow: 11,
-        startCol: 0,
-        orientation: "vertical"
-    },
-    {
-        number: 51,
-        word: "RED",
-        clue: "Niz",
-        startRow: 10,
-        startCol: 1,
-        orientation: "horizontal"
-    },
-    {
-        number: 52,
-        word: "R",
-        clue: "Radius",
-        startRow: 11,
-        startCol: 4,
-        orientation: "vertical"
-    },
-    {
-        number: 53,
-        word: "PDF",
-        clue: "Portable Document Format",
-        startRow: 7,
-        startCol: 3,
-        orientation: "horizontal"
-    },
-    {
-        number: 54,
-        word: "ABA",
-        clue: "Jadranska liga u košarci",
-        startRow: 8,
-        startCol: 3,
-        orientation: "horizontal"
-    },
-    {
-        number: 55,
-        word: "ROSA",
-        clue: " Pojavljuje su ujutru",
-        startRow: 10,
-        startCol: 5,
-        orientation: "horizontal"
-    },
-    {
-        number: 56,
-        word: "RS",
-        clue: "Republika Srbija",
-        startRow: 10,
-        startCol: 5,
-        orientation: "vertical"
-    },
-    {
-        number: 57,
-        word: "GEN",
-        clue: "Nasledni faktor",
-        startRow: 9,
-        startCol: 6,
-        orientation: "horizontal"
-    },
-    {
-        number: 58,
-        word: "GOT",
-        clue: "Igra prestola",
-        startRow: 9,
-        startCol: 6,
-        orientation: "vertical"
-    },
-    {
-        number: 59,
-        word: "BESA",
-        clue: "Domaća TV serija",
-        startRow: 8,
-        startCol: 7,
-        orientation: "vertical"
-    },
-    {
-        number: 60,
-        word: "BU",
-        clue: "Dža ili",
-        startRow: 8,
-        startCol: 7,
-        orientation: "horizontal"
-    },
-    {
-        number: 61,
-        word: "BUNAR",
-        clue: "Domaća TV serija",
-        startRow: 7,
+        word: "O",
+        clue: "Obim",
+        startRow: 5,
         startCol: 8,
         orientation: "vertical"
     },
     {
-        number: 62,
-        word: "KLAN",
-        clue: "Domaća TV serija",
+        number: 45,
+        word: "A",
+        clue: "Najčešće slovo",
+        startRow: 4,
+        startCol: 9,
+        orientation: "horizontal"
+    },
+    {
+        number: 46,
+        word: "TI",
+        clue: "Lična zamenica",
+        startRow: 2,
+        startCol: 8,
+        orientation: "horizontal"
+    },
+    {
+        number: 47,
+        word: "ZVRK",
+        clue: "Lična zamenica",
         startRow: 1,
+        startCol: 9,
+        orientation: "horizontal"
+    },
+    {
+        number: 48,
+        word: "V",
+        clue: "3. slovo azbuke",
+        startRow: 2,
         startCol: 11,
         orientation: "horizontal"
     },
     {
-        number: 63,
-        word: "LEP",
-        clue: "Krasan, dopadljiv",
-        startRow: 9,
-        startCol: 2,
+        number: 49,
+        word: "M",
+        clue: "Metar (skr.)",
+        startRow: 3,
+        startCol: 10,
         orientation: "vertical"
     },
+    {
+        number: 50,
+        word: "SAT",
+        clue: "Može biti zidni ili peščani",
+        startRow: 4,
+        startCol: 11,
+        orientation: "horizontal"
+    },
+    {
+        number: 51,
+        word: "[NJ]A",
+        clue: "17. i 1. slovo azbuke",
+        startRow: 3,
+        startCol: 12,
+        orientation: "vertical"
+    },
+    
+    {
+        number: 52,
+        word: "BIT",
+        clue: "naziv nove mts tarife za mlade",
+        startRow: 2,
+        startCol: 13,
+        orientation: "vertical"
+    },
+    {
+        number: 53,
+        word: "BIT",
+        clue: "naziv nove mts tarife za mlade",
+        startRow: 2,
+        startCol: 13,
+        orientation: "vertical"
+    },
+
+    
 ];
 
 // New array to define images in the grid
 const gridImages = [
     {
         id: "img",
-        src: "./src/img.jpg", // Placeholder image for MTS Logo
-        alt: "SUPERSTAR Logo",
+        src: "./src/bit.jpg", // Placeholder image for MTS Logo
+        alt: "BIT Tarifa",
         startRow: 5, // Top-left row of the image
         startCol: 9, // Top-left column of the image
-        rowSpan: 7, // Image spans 7 rows
-        colSpan: 6  // Image spans 6 columns
+        rowSpan: 6, // Image spans 7 rows
+        colSpan: 5  // Image spans 6 columns
     }
 ];
 
@@ -552,22 +475,37 @@ function populateSolutionGrid() {
     initializeGrids(); // Always start with empty grids
 
     // 1. Place words in the solutionGrid
-    crosswordWords.forEach(wordData => {
-        const { word, startRow, startCol, orientation } = wordData;
-        for (let i = 0; i < word.length; i++) {
-            let row = startRow;
-            let col = startCol;
-            if (orientation === "horizontal") {
-                col += i;
-            } else { // vertical
-                row += i;
-            }
-            // Check against new GRID_ROWS and GRID_COLS
-            if (row >= 0 && row < GRID_ROWS && col >= 0 && col < GRID_COLS) {
-                solutionGrid[row][col] = word[i];
-            }
+   crosswordWords.forEach(wordData => {
+    const { word, startRow, startCol, orientation } = wordData;
+    
+    let cellIndex = 0; // Brojač za polja u ukrštenici
+    for (let i = 0; i < word.length; i++) {
+        let letter = '';
+
+        // Proveravamo da li je slovo digraf (počinje sa '[')
+        if (word[i] === '[') {
+            letter = word.substring(i + 1, i + 3); // Uzimamo 2 slova unutar zagrada (npr. LJ)
+            i += 3; // Preskačemo '[', 'L', 'J', ']'
+        } else {
+            letter = word[i];
         }
-    });
+
+        let row = startRow;
+        let col = startCol;
+
+        if (orientation === "horizontal") {
+            col += cellIndex;
+        } else { // vertical
+            row += cellIndex;
+        }
+
+        if (row >= 0 && row < GRID_ROWS && col >= 0 && col < GRID_COLS) {
+            solutionGrid[row][col] = letter; // Smeštamo ili 'A' ili 'LJ'
+        }
+
+        cellIndex++;
+    }
+});
 
     // 2. Place image markers in the solutionGrid
     gridImages.forEach(imgData => {
@@ -614,7 +552,12 @@ function generateHtmlGrid() {
             } else { // It's a letter cell
                 const input = document.createElement('input');
                 input.type = 'text';
+                if (solutionGrid[r][k].length > 1) {
+                input.maxLength = solutionGrid[r][k].length; 
+                 } else {
                 input.maxLength = '1';
+                }
+                
                 input.dataset.row = r;
                 input.dataset.col = k;
                 input.value = inputGrid[r][k]; // Restore previous input on reset
@@ -957,7 +900,7 @@ document.addEventListener('DOMContentLoaded', () => {
             inputGrid[row][col] = enteredChar;
 
             // Automatic navigation to the next available cell (horizontal then vertical)
-            if (enteredChar && target.maxLength === '1') {
+            if (target.value.length >= target.maxLength) {
                 let nextInputFound = false;
                 // Try horizontal
                 for (let c = col + 1; c < GRID_COLS; c++) { // Use GRID_COLS

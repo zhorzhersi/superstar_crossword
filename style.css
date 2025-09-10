@@ -41,8 +41,8 @@ h1 {
 #crossword-grid {
     display: grid;
     /* Koristimo minmax za fleksibilnije kolone koje se smanjuju i šire */
-    grid-template-columns: repeat(15, minmax(20px, 1fr)); /* 15 kolona, min 20px po ćeliji */
-    grid-template-rows: repeat(12, minmax(20px, 1fr));    /* 12 redova, min 20px po ćeliji */
+    grid-template-columns: repeat(14, minmax(20px, 1fr)); /* 15 kolona, min 20px po ćeliji */
+    grid-template-rows: repeat(11, minmax(20px, 1fr));    /* 12 redova, min 20px po ćeliji */
     border: 2px solid #d51735; /* Lighter gray border */
     /* Max širina mreže, koristi min() da se prilagodi ekranu */
     max-width: min(600px, 95vw); /* Maksimalno 600px ili 95% širine viewporta */
@@ -51,7 +51,7 @@ h1 {
     background-color: #4a5568; /* Light green background for grid as requested */
     position: relative; /* Needed for absolute positioning of image wrappers and tooltips */
     /* aspect-ratio na nivou mreže pomaže, ali individualne ćelije su ključ za kvadratnost */
-    aspect-ratio: 15 / 12; /* Odnos kolona prema redovima za cijelu mrežu */
+    aspect-ratio: 14 / 11; /* Odnos kolona prema redovima za cijelu mrežu */
    
 }
 
@@ -115,7 +115,7 @@ h1 {
     align-items: center;
     overflow: hidden;
     z-index: 5; /* Ensure it's above grid cells but below tooltips */
-    border: 1px solid #d51735;   
+    border: 0px solid #d51735;   
     border-radius: 0rem;
     box-sizing: border-box;
     background-color: #ffffff; /* White background for the image wrapper */
