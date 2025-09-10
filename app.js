@@ -202,7 +202,7 @@ const crosswordWords = [
         clue: "Srećković Aleksandar",
         startRow: 4,
         startCol: 8,
-        orientation: "horizontal"
+        orientation: "vertical"
     },
     {
         number: 23,
