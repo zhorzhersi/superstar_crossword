@@ -991,7 +991,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     genericShareBtn.addEventListener('click', async () => {
         const shareData = {
-            title: 'Mts ukrštene reči',
+            title: 'mts ukrštene reči',
             text: 'Reši i ti mts ukrštenicu!',
             url: window.location.href // Deli link trenutne stranice
         };
