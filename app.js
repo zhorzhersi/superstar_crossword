@@ -103,7 +103,7 @@ const crosswordWords = [
     {
         number: 10,
         word: "EVA",
-        clue: "Ime prve žene",
+        clue: "Adam i...",
         startRow: 0,
         startCol: 5,
         orientation: "vertical"
@@ -255,7 +255,7 @@ const crosswordWords = [
     {
         number: 29,
         word: "ANA",
-        clue: "Naša bivša teniserka Ivanović",
+        clue: "Ime teniserke Ivanović",
         startRow: 8,
         startCol: 6,
         orientation: "horizontal"
@@ -263,7 +263,7 @@ const crosswordWords = [
     {
         number: 30,
         word: "[LJ]A",
-        clue: "Inicijali jugoslovenske glumice Ljubice Adžović",
+        clue: "Ljubica Adžović",
         startRow: 7,
         startCol: 6,
         orientation: "horizontal"
