@@ -453,6 +453,14 @@ const crosswordWords = [
         startCol: 3,
         orientation: "vertical"
     },
+    {
+        number: 54,
+        word: "TA",
+        clue: "Tantal",
+        startRow: 2,
+        startCol: 8,
+        orientation: "vertical"
+    },
    
    
 
