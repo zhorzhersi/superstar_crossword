@@ -445,6 +445,15 @@ const crosswordWords = [
         startCol: 13,
         orientation: "vertical"
     },
+    {
+        number: 53,
+        word: "NN",
+        clue: "2 ista slova",
+        startRow:6,
+        startCol: 3,
+        orientation: "vertical"
+    },
+   
    
 
     
