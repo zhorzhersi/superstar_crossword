@@ -704,9 +704,11 @@ function checkSolution() {
     }
 
    if (allCorrect && filledCells === correctCells) {
+        gtag('event', 'crossword_solved');
         // Umesto 'true', sada šaljemo string 'success'
         showMessageModal("Čestitamo! Rešili ste mts ukrštenicu!", 'success');
     } else {
+        gtag('event', 'solution_checked_incorrect');
         // Ovde šaljemo string 'error'
         showMessageModal("Neke reči su netačne. <br>Proverite crveno naznačena polja!", 'error');
     }
