@@ -704,12 +704,22 @@ function checkSolution() {
     }
 
    if (allCorrect && filledCells === correctCells) {
-        gtag('event', 'crossword_solved');
-        // Umesto 'true', sada šaljemo string 'success'
+        // Proveravamo da li gtag funkcija postoji pre nego što je pozovemo
+        if (typeof gtag === 'function') {
+            gtag('event', 'crossword_solved');
+        } else {
+            console.warn('Google Analytics gtag funkcija nije pronađena.');
+        }
+        
         showMessageModal("Čestitamo! Rešili ste mts ukrštenicu!", 'success');
     } else {
-        gtag('event', 'solution_checked_incorrect');
-        // Ovde šaljemo string 'error'
+        // Proveravamo da li gtag funkcija postoji pre nego što je pozovemo
+        if (typeof gtag === 'function') {
+            gtag('event', 'solution_checked_incorrect');
+        } else {
+            console.warn('Google Analytics gtag funkcija nije pronađena.');
+        }
+
         showMessageModal("Neke reči su netačne. <br>Proverite crveno naznačena polja!", 'error');
     }
 }
