@@ -1,6 +1,6 @@
 // Grid dimensions 
-const GRID_ROWS = 11;
-const GRID_COLS = 14;
+const GRID_ROWS = 13;
+const GRID_COLS = 16;
 // Internal grid to store solutions (letters, '#', or '#IMG#')
 let solutionGrid = [];
 // Internal grid to store user input
@@ -30,435 +30,26 @@ function initializeGrids() {
 const crosswordWords = [
     {
         number: 1,
-        word: "POSTPEJDTARIFA",
-        clue: "Suprotno od pripejd tarife",
+        word: "SKYZ",
+        clue: "Srpska književna zadruga",
         startRow: 0,
         startCol: 0,
         orientation: "horizontal"
     },
     {
         number: 2,
-        word: "PUSTOLOVINA",
-        clue: "Avantura",
+        word: "SVETAC",
+        clue: "Svetitelj",
         startRow: 0,
         startCol: 0,
         orientation: "vertical"
     },
     {
-        number: 3,
-        word: "USISIVAČ",
-        clue: "Mali kućni aparat",
-        startRow: 1,
+        number: 2,
+        word: "SVETAC",
+        clue: "Svetitelj",
+        startRow: 0,
         startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 4,
-        word: "OSTATI",
-        clue: "Ne otići",
-        startRow: 0,
-        startCol: 1,
-        orientation: "vertical"
-    },
-    {
-        number: 5,
-        word: "SIRTAKI",
-        clue: "Najpoznatiji grčki ples",
-        startRow: 0,
-        startCol: 2,
-        orientation: "vertical"
-    },
-    {
-        number: 6,
-        word: "TSI",
-        clue: "Turbocharged Stratified Injection (skr.)",
-        startRow: 0,
-        startCol: 3,
-        orientation: "vertical"
-    },
-    {
-        number: 7,
-        word: "STRIKAN",
-        clue: "Stric odmila",
-        startRow: 2,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 8,
-        word: "TAT",
-        clue: "Grad u Mađarskoj",
-        startRow: 3,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 9,
-        word: "PIKANTAN",
-        clue: "Snažno začinjen",
-        startRow: 0,
-        startCol: 4,
-        orientation: "vertical"
-    },
-    {
-        number: 10,
-        word: "EVA",
-        clue: "Adam i...",
-        startRow: 0,
-        startCol: 5,
-        orientation: "vertical"
-    },
-    {
-        number: 11,
-        word: "JAN",
-        clue: "Često muško nemačko ime",
-        startRow: 0,
-        startCol: 6,
-        orientation: "vertical"
-    },
-    {
-        number: 12,
-        word: "DČ",
-        clue: "Dragomir Čumić",
-        startRow: 0,
-        startCol: 7,
-        orientation: "vertical"
-    },
-    {
-        number: 13,
-        word: "OTA",
-        clue: "Bežični prenospodataka (eng.)",
-        startRow: 4,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 14,
-        word: "LIK",
-        clue: "Crte lica",
-        startRow: 5,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 15,
-        word: "O",
-        clue: "Okruglo slovo",
-        startRow: 6,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 16,
-        word: "VI",
-        clue: "Lična zamenica",
-        startRow: 7,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 17,
-        word: "T",
-        clue: "Tona (skr.)",
-        startRow: 0,
-        startCol: 8,
-        orientation: "vertical"
-    },
-    {
-        number: 18,
-        word: "AZIJA",
-        clue: "Jedan kontinent",
-        startRow: 0,
-        startCol: 9,
-        orientation: "vertical"
-    },
-    {
-        number: 19,
-        word: "RV",
-        clue: "Ratno vazduhoplovstvo (skr.)",
-        startRow: 0,
-        startCol: 10,
-        orientation: "vertical"
-    },
-    {
-        number: 20,
-        word: "IRVAS",
-        clue: "Severni jelen",
-        startRow: 0,
-        startCol: 11,
-        orientation: "vertical"
-    },
-    {
-        number: 21,
-        word: "FK",
-        clue: "Fudbalski klub (skr.)",
-        startRow: 0,
-        startCol: 12,
-        orientation: "vertical"
-    },
-    {
-        number: 22,
-        word: "A",
-        clue: "Prvo slovo azbuke",
-        startRow: 0,
-        startCol: 13,
-        orientation: "vertical"
-    },
-    {
-        number: 23,
-        word: "IVA",
-        clue: "Popularno žensko ime",
-        startRow: 8,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 24,
-        word: "NASTAVNIK",
-        clue: "Predavač u osnovnoj školi",
-        startRow: 9,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 25,
-        word: "ANALITIKA",
-        clue: "Teorija analize",
-        startRow: 10,
-        startCol: 0,
-        orientation: "horizontal"
-    },
-    {
-        number: 26,
-        word: "TL",
-        clue: "Talijum",
-        startRow: 9,
-        startCol: 3,
-        orientation: "vertical"
-    },
-    {
-        number: 27,
-        word: "AI",
-        clue: "Veštačka inteligencija (eng)",
-        startRow: 9,
-        startCol: 4,
-        orientation: "vertical"
-    },
-    {
-        number: 28,
-        word: "VT",
-        clue: "Viša tarifa (skr.)",
-        startRow: 9,
-        startCol: 5,
-        orientation: "vertical"
-    },
-    {
-        number: 29,
-        word: "ANA",
-        clue: "Ime teniserke Ivanović",
-        startRow: 8,
-        startCol: 6,
-        orientation: "horizontal"
-    },
-    {
-        number: 30,
-        word: "[LJ]A",
-        clue: "Ljubica Adžović",
-        startRow: 7,
-        startCol: 6,
-        orientation: "horizontal"
-    },
-    {
-        number: 34,
-        word: "VČ",
-        clue: "Vinston Čerčil",
-        startRow: 6,
-        startCol: 6,
-        orientation: "horizontal"
-    },
-    {
-        number: 31,
-        word: "AKA",
-        clue: "'Also known as'",
-        startRow: 8,
-        startCol: 8,
-        orientation: "vertical"
-    },
-    {
-        number: 32,
-        word: "ASA",
-        clue: "Army Security Agency",
-        startRow: 8,
-        startCol: 2,
-        orientation: "vertical"
-    },
-    {
-        number: 33,
-        word: "NN",
-        clue: "Nepoznata osoba",
-        startRow: 7,
-        startCol: 3,
-        orientation: "horizontal"
-    },
-    {
-        number: 35,
-        word: "IVAN",
-        clue: "Često muško ime",
-        startRow: 7,
-        startCol: 1,
-        orientation: "vertical"
-    },
-    {
-        number: 36,
-        word: "INA",
-        clue: "Ines odmila",
-        startRow: 6,
-        startCol: 2,
-        orientation: "horizontal"
-    },
-    {
-        number: 37,
-        word: "TROVO",
-        clue: "Platforma za strimovanje sadržaja",
-        startRow: 5,
-        startCol: 4,
-        orientation: "horizontal"
-    },
-    {
-        number: 38,
-        word: "NANO",
-        clue: "Prefiks za milijarditi deo",
-        startRow: 4,
-        startCol: 4,
-        orientation: "horizontal"
-    },
-    {
-        number: 39,
-        word: "A",
-        clue: "Austrija",
-        startRow: 3,
-        startCol: 4,
-        orientation: "horizontal"
-    },
-    {
-        number: 40,
-        word: "AR",
-        clue: "Jedinica za merenje površine zemljišta",
-        startRow: 4,
-        startCol: 5,
-        orientation: "vertical"
-    },
-    {
-        number: 41,
-        word: "NOV[LJ]ANI",
-        clue: "Stanovnici Herceg Novog",
-        startRow: 4,
-        startCol: 6,
-        orientation: "vertical"
-    },
-    {
-        number: 42,
-        word: "NAJMA[NJ]I",
-        clue: "Superlativ prideva mali",
-        startRow: 3,
-        startCol: 7,
-        orientation: "horizontal"
-    },
-    {
-        number: 43,
-        word: "NOVČANIK",
-        clue: "Buđelar",
-        startRow: 3,
-        startCol: 7,
-        orientation: "vertical"
-    },
-    {
-        number: 44,
-        word: "O",
-        clue: "Obim",
-        startRow: 5,
-        startCol: 8,
-        orientation: "vertical"
-    },
-    {
-        number: 45,
-        word: "A",
-        clue: "Najčešće slovo",
-        startRow: 4,
-        startCol: 9,
-        orientation: "horizontal"
-    },
-    {
-        number: 46,
-        word: "TI",
-        clue: "Lična zamenica",
-        startRow: 2,
-        startCol: 8,
-        orientation: "horizontal"
-    },
-    {
-        number: 47,
-        word: "ZVRK",
-        clue: "Naziv nove mts tarife za najmlađe",
-        startRow: 1,
-        startCol: 9,
-        orientation: "horizontal"
-    },
-    {
-        number: 48,
-        word: "V",
-        clue: "3. slovo azbuke",
-        startRow: 2,
-        startCol: 11,
-        orientation: "horizontal"
-    },
-    {
-        number: 49,
-        word: "M",
-        clue: "Metar (skr.)",
-        startRow: 3,
-        startCol: 10,
-        orientation: "vertical"
-    },
-    {
-        number: 50,
-        word: "SAT",
-        clue: "Može biti zidni ili peščani",
-        startRow: 4,
-        startCol: 11,
-        orientation: "horizontal"
-    },
-    {
-        number: 51,
-        word: "[NJ]A",
-        clue: "17. i 1. slovo azbuke",
-        startRow: 3,
-        startCol: 12,
-        orientation: "vertical"
-    },
-    
-    {
-        number: 52,
-        word: "BIT",
-        clue: "Naziv nove mts tarife za mlade",
-        startRow: 2,
-        startCol: 13,
-        orientation: "vertical"
-    },
-    {
-        number: 53,
-        word: "NN",
-        clue: "2 ista slova",
-        startRow:6,
-        startCol: 3,
-        orientation: "vertical"
-    },
-    {
-        number: 54,
-        word: "TA",
-        clue: "Tantal",
-        startRow: 2,
-        startCol: 8,
         orientation: "vertical"
     },
    
@@ -471,12 +62,12 @@ const crosswordWords = [
 const gridImages = [
     {
         id: "img",
-        src: "./src/bit.jpg", // Placeholder image for MTS Logo
+       // src: "./src/bit.jpg", // Placeholder image for MTS Logo
         alt: "BIT Tarifa",
         startRow: 5, // Top-left row of the image
-        startCol: 9, // Top-left column of the image
-        rowSpan: 6, // Image spans 7 rows
-        colSpan: 5  // Image spans 6 columns
+        startCol: 10, // Top-left column of the image
+        rowSpan: 8, // Image spans 7 rows
+        colSpan: 6  // Image spans 6 columns
     }
 ];
 
