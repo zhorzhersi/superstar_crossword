@@ -599,7 +599,7 @@ const crosswordWords = [
 const gridImages = [
     {
         id: "img",
-       // src: "./src/bit.jpg", // Placeholder image for MTS Logo
+        src: "./src/crnasvadba.png", // Placeholder image for MTS Logo
         alt: "BIT Tarifa",
         startRow: 5, // Top-left row of the image
         startCol: 10, // Top-left column of the image
