@@ -248,7 +248,7 @@ const crosswordWords = [
     {
         number: 28,
         word: "SUPERSTAR",
-        clue: "Naziv kanala na kojem će serija biti emitovana",
+        clue: "Naziv TV kanala na kojem će serija biti emitovana",
         startRow: 0,
         startCol: 4,
         orientation: "vertical"
@@ -312,7 +312,7 @@ const crosswordWords = [
     {
         number: 36,
         word: "ODBRANITI",
-        clue: "Molecular Immunology, Virology and Inflammation",
+        clue: "Zaštititi, sačuvati",
         startRow: 4,
         startCol: 7,
         orientation: "vertical"
@@ -328,7 +328,7 @@ const crosswordWords = [
     {
         number: 38,
         word: "VLASI",
-        clue: "Čuveni po vlaškoj magiji",
+        clue: "Čuveni su po magiji",
         startRow: 0,
         startCol: 10,
         orientation: "vertical"
@@ -352,7 +352,7 @@ const crosswordWords = [
     {
         number: 41,
         word: "LER",
-        clue: "Registarska oznaka za Sentu",
+        clue: "Prazan hod motora",
         startRow: 0,
         startCol: 13,
         orientation: "horizontal"
@@ -565,6 +565,31 @@ const crosswordWords = [
         startCol: 9,
         orientation: "vertical"
     },
+    {
+        number:68,
+        word: "OTEČEN",
+        clue: "Naduven, baburast",
+        startRow: 7,
+        startCol: 6,
+        orientation: "vertical"
+    },
+    {
+        number: 69,
+        word: "V",
+        clue: "Rimski broj 5",
+        startRow: 9,
+        startCol: 5,
+        orientation: "vertical"
+    },
+    {
+        number: 70,
+        word: "BEZ",
+        clue: "Jedan predlog",
+        startRow: 6,
+        startCol: 7,
+        orientation: "horizontal"
+    },
+
 
 
     
