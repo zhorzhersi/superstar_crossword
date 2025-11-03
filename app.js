@@ -230,16 +230,16 @@ const crosswordWords = [
     },
     {
         number: 26,
-        word: "CU",
-        clue: "Bakar",
+        word: "KRIT",
+        clue: "Grčko ostrvo",
         startRow: 2,
         startCol: 4,
         orientation: "horizontal"
     },
     {
         number: 27,
-        word: "KRIT",
-        clue: "Grčko ostrvo",
+        word: "BR",
+        clue: "Broj",
         startRow: 3,
         startCol: 3,
         orientation: "vertical"
@@ -545,7 +545,7 @@ const crosswordWords = [
         word: "IGED",
         clue: "Initiative for Gender Equality and Development",
         startRow: 7,
-        startCol: 10,
+        startCol: 11,
         orientation: "horizontal"
     },
     {
