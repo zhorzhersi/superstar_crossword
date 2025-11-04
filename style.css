@@ -41,11 +41,11 @@ h1 {
 #crossword-grid {
     display: grid;
     /* Koristimo minmax za fleksibilnije kolone koje se smanjuju i šire */
-    grid-template-columns: repeat(18, minmax(20px, 1fr)); /* 15 kolona, min 20px po ćeliji */
-    grid-template-rows: repeat(13, minmax(20px, 1fr));    /* 12 redova, min 20px po ćeliji */
+    grid-template-columns: repeat(18, minmax(15px, 1fr)); /* 15 kolona, min 20px po ćeliji */
+    grid-template-rows: repeat(13, minmax(15px, 1fr));    /* 12 redova, min 20px po ćeliji */
     border: 2px solid #d51735; /* Lighter gray border */
     /* Max širina mreže, koristi min() da se prilagodi ekranu */
-    max-width: min(600px, 95vw); /* Maksimalno 600px ili 95% širine viewporta */
+    max-width: min(800px, 95vw); /* Maksimalno 600px ili 95% širine viewporta */
     width: 100%; /* Osigurava da zauzima punu širinu kontejnera do max-width */
     margin-bottom: 1.5rem; /* Smanjen margin-bottom */
     background-color: #4a5568; /* Light green background for grid as requested */
@@ -402,4 +402,42 @@ h1 {
 #modal-icon.error::after {
     /* Savršeno centriranje i rotacija */
     transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Stil za padajući meni za izbor ukrštenice */
+.crossword-selector-wrapper {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.crossword-selector-wrapper label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #530915;
+}
+
+#crossword-selector {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    padding-right: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid #ed1a3b;
+    background-color: #fff;
+    font-family: 'Antenna', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#crossword-selector:focus {
+    outline: none;
+    border-color: #d51735;
+    box-shadow: 0 0 0 2px rgba(252, 108, 129, 0.3);
 }
