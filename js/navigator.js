@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Kreiraj HTML za padajući meni
     let html = `
         <div class="crossword-selector-wrapper">
-            <label for="crossword-selector">Izaberi prošlu ukrštenicu:</label>
+            <label for="crossword-selector">Izaberi drugu ukrštenicu:</label>
             <select id="crossword-selector">
     `;
 

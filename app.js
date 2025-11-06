@@ -669,7 +669,7 @@ const crosswordWords = [
         orientation: "horizontal"
     },
     {
-        number: 81,
+        number: 82,
         word: "DIRATI",
         clue: "Pipati",
         startRow: 12,
