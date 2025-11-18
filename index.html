@@ -3,32 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mts ukrštene reči</title>
-    <!-- Tailwind CSS CDN -->
+    
+    <title>mts Ukrštene Reči | Igraj Online i Osvoji Znanje</title>
+    
+    <meta name="description" content="Igrajte mts ukrštene reči online! Testirajte svoje znanje o mts uslugama, geografiji i opštoj kulturi. Zabavna i besplatna igra za sve generacije.">
+    
+    <meta name="keywords" content="mts, ukrštene reči, ukrštenica, igra, kviz, znanje, telekom srbija, online igra, besplatno">
+
+    <link rel="canonical" href="https://www.resirec.rs/" />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Link to your external CSS file -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="src/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-     <meta property="og:title" content="mts Ukrštene Reči - Reši Izazov!" />
-
-    <meta property="og:description" content="Zabavna i izazovna mts ukrštenica čeka na tebe. Probaj da je rešiš!" />
-
+    
+    <meta property="og:title" content="mts Ukrštene Reči - Reši Izazov!" />
+    <meta property="og:description" content="Zabavna i izazovna mts ukrštenica čeka na tebe. Pokaži svoje znanje i reši sve pojmove!" />
     <meta property="og:image" content="https://zhorzhersi.github.io/superstar_crossword/src/slika1.png" />
-
     <meta property="og:url" content="https://www.resirec.rs/" />
-
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="mts Ukrštene Reči" />
 
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="mts Ukrštene Reči">
+    <meta name="twitter:description" content="Probaj da rešiš najnoviju mts ukrštenicu!">
+    <meta name="twitter:image" content="https://zhorzhersi.github.io/superstar_crossword/src/slika1.png">
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "mts Ukrštene Reči",
+      "url": "https://www.resirec.rs/",
+      "description": "Interaktivna online ukrštenica sa pojmovima o mts uslugama i opštoj kulturi.",
+      "genre": ["Puzzle", "Educational"],
+      "image": "https://zhorzhersi.github.io/superstar_crossword/src/slika1.png",
+      "author": {
+        "@type": "Organization",
+        "name": "mts"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": "7"
+      }
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DWVZMSN81Y"></script> 
+    <script> window.dataLayer = window.dataLayer || []; 
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-DWVZMSN81Y'); </script>
 
 </head>
-
-<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-DWVZMSN81Y"></script> 
- <script> window.dataLayer = window.dataLayer || []; 
- function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-DWVZMSN81Y'); </script>
 
 <body>
 
@@ -36,14 +61,13 @@
         <h1>mts ukrštene reči</h1>
 
         <div id="crossword-grid">
-            <!-- Grid cells will be generated here by JavaScript -->
-        </div>
+            </div>
         <div class="button-group">
             <button id="checkSolutionBtn" class="btn btn-primary">Proveri Rešenje</button>
             <button id="resetGameBtn" class="btn btn-secondary">Resetuj Igru     <span class="material-symbols-outlined"> refresh</span></button>
              <button id="genericShareBtn" class="btn btn-icon" title="Podeli igru">
-        <span class="material-symbols-outlined">share</span>
-    </button>
+                <span class="material-symbols-outlined">share</span>
+            </button>
            
             <button id="showSolutionBtn" class="btn btn-secondary hidden-for-release"> Prikaži Rešenje</button> 
 
@@ -62,7 +86,27 @@
         </div>
     </div>
 
-    <!-- Message Modal -->
+    <section class="max-w-3xl mx-auto mt-8 px-4 mb-8" style="width: 100%; max-width: 800px;">
+        <details class="group bg-white border border-gray-200 rounded-lg shadow-sm open:ring-1 open:ring-red-500">
+            <summary class="flex cursor-pointer items-center justify-between p-4 font-medium text-gray-800 hover:bg-gray-50 focus:outline-none" style="color: #530915;">
+                <span>Kako se igraju mts Ukrštene Reči? (Klikni za uputstvo)</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            
+            <div class="border-t border-gray-200 p-4 text-sm text-gray-600 bg-gray-50">
+                <p class="mb-2">Dobrodošli u online izazov znanja! Naša <strong>mts ukrštenica</strong> je savršen način da testirate svoju opštu kulturu, poznavanje geografije, filma i muzike, kao i da naučite nešto novo o <strong>mts uslugama</strong>.</p>
+                <ul class="list-disc ml-5 mb-2">
+                    <li>Kliknite na bilo koje polje u ukrštenici da biste uneli slovo.</li>
+                    <li>Pitanja obuhvataju različite pojmove kao i neke od <strong>mts usluga</strong>.</li>
+                    <li>Nakon što popunite polja, koristite dugme "Proveri Rešenje" da vidite svoj rezultat.</li>
+                </ul>
+                <p>Ova igra je optimizovana za sve uređaje, bilo da igrate na telefonu ili računaru. Rešavajte ukrštene reči i zabavite se i naučite nešto novo!</p>
+            </div>
+        </details>
+    </section>
+
     <div id="messageModal" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
@@ -74,7 +118,6 @@
         </div>
     </div>
 
-    <!-- Link to your external JavaScript file -->
     <script src="app.js"></script>
     <script src="https://resirec.rs/js/navigator.js"></script>
 </body>

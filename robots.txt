@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.resirec.rs/sitemap.xml
