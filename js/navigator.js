@@ -5,8 +5,12 @@
 // (Stavi najnoviju na VRH liste)
 const allCrosswords = [
     {
-        title: "Novembar (Copy-Paste)",
+        title: "Decembar (5G mreža)",
         url: "https://resirec.rs"
+    },
+    {
+        title: "Novembar (Copy-Paste)",
+        url: "https://resirec.rs/copy-paste"
     },
     {
         title: "Oktobar (Crna Svadba)",
