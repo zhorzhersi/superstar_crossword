@@ -4,20 +4,24 @@
 // 1. Definiši sve svoje ukrštenice ovde
 // (Stavi najnoviju na VRH liste)
 const allCrosswords = [
+     {
+        title: "5. Telcast",
+        url: "https://resirec.rs/telcast"
+    },
     {
-        title: "Decembar (5G mreža)",
+        title: "4. 5G mreža",
         url: "https://resirec.rs"
     },
     {
-        title: "Novembar (Copy-Paste)",
+        title: "3. Copy-Paste",
         url: "https://resirec.rs/copy-paste"
     },
     {
-        title: "Oktobar (Crna Svadba)",
+        title: "2. Crna Svadba",
         url: "https://resirec.rs/crnasvadba"
     },
     {
-        title: "Septembar (BIT Tarifa)",
+        title: "1. BIT Tarifa",
         url: "https://resirec.rs/bit"
     }
     // KADA DODAJEŠ NOVU (npr. Decembar):
