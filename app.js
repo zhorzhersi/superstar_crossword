@@ -73,7 +73,7 @@ const crosswordWords = [
     {
         number: n++,
         word: "[NJ]IVA",
-        clue: "Pristalica ideologije",
+        clue: "Oranica",
         startRow: 2,
         startCol: 0,
         orientation: "horizontal"
@@ -82,7 +82,7 @@ const crosswordWords = [
     {
         number: n++,
         word: "TOALET",
-        clue: "Valuta u Bugarskoj",
+        clue: "Klozet",
         startRow: 0,
         startCol: 3,
         orientation: "vertical"
@@ -252,18 +252,310 @@ const crosswordWords = [
         orientation: "vertical"
     },
 
+    {
+        number: n++,
+        word: "DEKA",
+        clue: "Deda odmila",
+        startRow: 1,
+        startCol: 8,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "TELCAST",
+        clue: "Domaći podcast",
+        startRow: 2,
+        startCol: 7,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "PRO",
+        clue: "Profesionalno(eng.)",
+        startRow: 1,
+        startCol: 13,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "USEV",
+        clue: "Zasejana biljka",
+        startRow: 2,
+        startCol: 12,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "TI",
+        clue: "Lična zamenica",
+        startRow: 3,
+        startCol: 15,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "LITERATURA",
+        clue: "Može biti stručna ili književna",
+        startRow: 2,
+        startCol: 5,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "EPE",
+        clue: "Vrsta kratkog mača",
+        startRow: 3,
+        startCol: 5,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "RALICA",
+        clue: "Deo pluga",
+        startRow: 4,
+        startCol: 5,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "OKNO",
+        clue: "Prozor",
+        startRow: 5,
+        startCol: 4,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "L",
+        clue: "Litar",
+        startRow: 3,
+        startCol: 3,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "RETRO",
+        clue: "Nostalgični stil",
+        startRow: 4,
+        startCol: 2,
+        orientation: "vertical"
+    },
+    {
+        number: n++,
+        word: "I",
+        clue: "3. samoglasnik",
+        startRow: 4,
+        startCol: 8,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "AC",
+        clue: "1. i 27. slovo azbuke",
+        startRow: 5,
+        startCol: 9,
+        orientation: "horizontal"
+    },
+
+    {
+        number: n++,
+        word: "VISOST",
+        clue: "Veličanstvo",
+        startRow: 3,
+        startCol: 10,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "CA",
+        clue: "Kalcijum",
+        startRow: 4,
+        startCol: 9,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "ESTI",
+        clue: "Estonci",
+        startRow: 4,
+        startCol: 12,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "VTI",
+        clue: "Vojno tehnički insitut",
+        startRow: 5,
+        startCol: 12,
+        orientation: "horizontal"
+    },
+
+    {
+        number: n++,
+        word: "TC",
+        clue: "Tržni centar",
+        startRow: 5,
+        startCol: 6,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "RETKO",
+        clue: "Nije često",
+        startRow: 6,
+        startCol: 5,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "A",
+        clue: "Prvo slovo",
+        startRow: 6,
+        startCol: 7,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "W",
+        clue: "Duplo V",
+        startRow: 7,
+        startCol: 6,
+        orientation: "vertical"
+    },
+
+     {
+        number: n++,
+        word: "ETO",
+        clue: "Fudbaler Samuel",
+        startRow: 5,
+        startCol: 2,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "AUDIO",
+        clue: "Reprodukcija zvuka",
+        startRow: 6,
+        startCol: 1,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "KR",
+        clue: "Kripton",
+        startRow: 6,
+        startCol: 4,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "O",
+        clue: "Obim",
+        startRow: 7,
+        startCol: 3,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "OT",
+        clue: "Opštinska taksa",
+        startRow: 8,
+        startCol: 4,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "MA",
+        clue: "Jedan predlog",
+        startRow: 9,
+        startCol: 3,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "M",
+        clue: "15. slovo",
+        startRow: 9,
+        startCol: 3,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "R",
+        clue: "20. slovo",
+        startRow: 10,
+        startCol: 2,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "KK",
+        clue: "Košarkaški klub",
+        startRow: 9,
+        startCol: 5,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "V",
+        clue: "Volt",
+        startRow: 10,
+        startCol: 4 ,
+        orientation: "vertical"
+    },
+
+    {
+        number: n++,
+        word: "T",
+        clue: "Tona",
+        startRow: 8,
+        startCol: 7,
+        orientation: "horizontal"
+    },
+    {
+        number: n++,
+        word: "KS",
+        clue: "Konjska snaga",
+        startRow: 9,
+        startCol: 6,
+        orientation: "vertical"
+    },
+    {
+        number: n++,
+        word: "T",
+        clue: "Temperatura",
+        startRow: 10,
+        startCol: 7,
+        orientation: "vertical"
+    },
+
+
+
+
+
 ];
 
 // New array to define images in the grid
 const gridImages = [
     {
         id: "img",
-        src: "./src/5g.jpg", // Placeholder image for MTS Logo
+        src: "./src/telcast1.jpg", // Placeholder image for MTS Logo
         alt: "5ica Tarifa/5Gmreža mts",
         startRow: 6, // Top-left row of the image
-        startCol: 9, // Top-left column of the image
+        startCol: 8, // Top-left column of the image
         rowSpan: 5, // Image spans 7 rows
-        colSpan: 8  // Image spans 6 columns
+        colSpan: 8,  // Image spans 6 columns
     }
 ];
 
